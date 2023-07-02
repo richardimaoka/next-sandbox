@@ -13,12 +13,14 @@ const MobileScreenshot = () => (
     css={css`
       display: block;
       margin: 0 auto;
-      max-width: 100%;
-      height: auto;
+      @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+      }
     `}
     src="/images/sign-in-with-google-1-3.png"
-    width="320"
-    height="536"
+    width="320" // desktop size
+    height="536" // desktop size
     alt="screenshot on mobile"
   />
 );
