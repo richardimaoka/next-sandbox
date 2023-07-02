@@ -25,6 +25,43 @@ const MobileScreenshot = () => (
   />
 );
 
+interface ModalFrameProps {
+  children: ReactNode;
+}
+
+const ModalFrame = ({ children }: ModalFrameProps) => (
+  <div
+    css={css`
+      position: relative; //to contain the modal box
+    `}
+  >
+    <div
+      css={css`
+        //modal box positioning
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1; /* Sit on top */
+      `}
+    >
+      <div
+        css={css`
+          //modal box styling
+          padding: 8px;
+          background-color: rgba(255, 255, 255, 0.9);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          width: fit-content;
+          margin: 0 auto;
+        `}
+      >
+        modal text
+      </div>
+    </div>
+    {children}
+  </div>
+);
+
 interface MainContainerProps {
   children: ReactNode;
 }
@@ -51,17 +88,9 @@ export default function Home() {
   return (
     <div className={notoSansJP.className}>
       <MainContainer>
-        <div
-          css={css`
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-            width: 100%;
-          `}
-        >
-          ボタンを押すとGoogleアカウントを 選択する画面に遷移し
-        </div>
-        <MobileScreenshot />
+        <ModalFrame>
+          <MobileScreenshot />
+        </ModalFrame>
       </MainContainer>
     </div>
   );
