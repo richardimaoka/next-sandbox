@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { Noto_Sans_JP } from "next/font/google";
+import Image from "next/image";
 import { ReactNode } from "react";
 const notoSansJP = Noto_Sans_JP({
   // Japanese font needs this settings, as index.d.ts doesn't allow subsets = japanese, which is probably due to the large size of japanese font
@@ -7,7 +8,20 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap", // removing this will unapplied japanese font, BUT THIS CAUSES LAYOUT SHIFT...!!!
 });
 
-const MobileScreenshot = () => <div>mobile screenshot</div>;
+const MobileScreenshot = () => (
+  <Image
+    css={css`
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    `}
+    src="/images/sign-in-with-google-1-3.png"
+    width="640"
+    height="1072"
+    alt="screenshot on mobile"
+  />
+);
 
 interface MainContainerProps {
   children: ReactNode;
@@ -23,7 +37,7 @@ const MainContainer = ({ children }: MainContainerProps) => (
     <div
       css={css`
         margin: 0 auto;
-        max-width: 968px;
+        max-width: 834px;
       `}
     >
       {children}
@@ -43,7 +57,7 @@ export default function Home() {
             width: 100%;
           `}
         >
-          よって、ここに、国連総会は すべての人間は 加盟国は、国際連合と協力して
+          ボタンを押すとGoogleアカウントを 選択する画面に遷移し
         </div>
         <MobileScreenshot />
       </MainContainer>
