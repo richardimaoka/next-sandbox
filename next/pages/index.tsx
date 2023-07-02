@@ -17,8 +17,8 @@ const MobileScreenshot = () => (
       height: auto;
     `}
     src="/images/sign-in-with-google-1-3.png"
-    width="640"
-    height="1072"
+    width="320"
+    height="536"
     alt="screenshot on mobile"
   />
 );
