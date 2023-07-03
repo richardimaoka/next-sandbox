@@ -40,7 +40,7 @@ const ModalFrame = ({ children }: ModalFrameProps) => (
         //modal box positioning
         position: absolute;
         left: 0;
-        top: 0;
+        top: 20px;
         width: 100%;
         z-index: 1; /* Sit on top */
       `}
