@@ -28,9 +28,10 @@ const MobileScreenshot = () => (
 interface ModalFrameProps {
   children: ReactNode;
   position: "top" | "middle" | "bottom";
+  message: string;
 }
 
-const ModalFrame = ({ children, position }: ModalFrameProps) => {
+const ModalFrame = ({ children, position, message }: ModalFrameProps) => {
   const f = (p: "top" | "middle" | "bottom"): string => {
     switch (p) {
       case "top":
@@ -69,7 +70,7 @@ const ModalFrame = ({ children, position }: ModalFrameProps) => {
             margin: 0 auto;
           `}
         >
-          modal text
+          {message}
         </div>
       </div>
       {children}
@@ -103,7 +104,7 @@ export default function Home() {
   return (
     <div className={notoSansJP.className}>
       <MainContainer>
-        <ModalFrame position="middle">
+        <ModalFrame position="middle" message="this is the modal text">
           <MobileScreenshot />
         </ModalFrame>
       </MainContainer>
