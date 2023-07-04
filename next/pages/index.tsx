@@ -1,5 +1,4 @@
-import { MobileScreenshot } from "@/components/MobileScreenshot";
-import { ModalFrame } from "@/components/ModalFrame";
+import { ImageCentered } from "@/components/ImageCentered";
 import { css } from "@emotion/react";
 import { Noto_Sans_JP } from "next/font/google";
 
@@ -36,13 +35,7 @@ export default function Home() {
   return (
     <div className={notoSansJP.className}>
       <MainContainer>
-        <ModalFrame position="middle" message="this is the modal text">
-          <MobileScreenshot
-            width={320}
-            height={536}
-            src="/images/sign-in-with-google-1-3.png"
-          />
-        </ModalFrame>
+        <ImageCentered src="/images/caution.png" width={512} height={512} />
       </MainContainer>
     </div>
   );
