@@ -1,4 +1,4 @@
-import { ImageCentered } from "@/components/ImageCentered";
+import { Browser } from "@/components/Browser";
 import { css } from "@emotion/react";
 import { Noto_Sans_JP } from "next/font/google";
 
@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className={notoSansJP.className}>
       <MainContainer>
-        <ImageCentered src="/images/caution.png" width={512} height={512} />
+        <Browser src="/images/browser.png" width={1920} height={1080} />
       </MainContainer>
     </div>
   );
