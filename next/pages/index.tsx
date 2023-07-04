@@ -27,40 +27,55 @@ const MobileScreenshot = () => (
 
 interface ModalFrameProps {
   children: ReactNode;
+  position: "top" | "middle" | "bottom";
 }
 
-const ModalFrame = ({ children }: ModalFrameProps) => (
-  <div
-    css={css`
-      position: relative; //to contain the modal box
-    `}
-  >
+const ModalFrame = ({ children, position }: ModalFrameProps) => {
+  const f = (p: "top" | "middle" | "bottom"): string => {
+    switch (p) {
+      case "top":
+        return "top: 20px;";
+      case "middle":
+        return "top: 50%;";
+      case "bottom":
+        return "bottom: 20px;";
+    }
+  };
+  const topBottomPosition = f(position);
+
+  return (
     <div
       css={css`
-        //modal box positioning
-        position: absolute;
-        left: 0;
-        top: 20px;
-        width: 100%;
-        z-index: 1; /* Sit on top */
+        position: relative; //to contain the modal box
       `}
     >
       <div
         css={css`
-          //modal box styling
-          padding: 8px;
-          background-color: rgba(255, 255, 255, 0.9);
-          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-          width: fit-content;
-          margin: 0 auto;
+          //modal box positioning
+          position: absolute;
+          left: 0;
+          ${topBottomPosition}
+          width: 100%;
+          z-index: 1; /* Sit on top */
         `}
       >
-        modal text
+        <div
+          css={css`
+            //modal box styling
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            width: fit-content;
+            margin: 0 auto;
+          `}
+        >
+          modal text
+        </div>
       </div>
+      {children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 interface MainContainerProps {
   children: ReactNode;
@@ -88,7 +103,7 @@ export default function Home() {
   return (
     <div className={notoSansJP.className}>
       <MainContainer>
-        <ModalFrame>
+        <ModalFrame position="middle">
           <MobileScreenshot />
         </ModalFrame>
       </MainContainer>
