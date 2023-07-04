@@ -1,30 +1,14 @@
+import { MobileScreenshot } from "@/components/MobileScreenshot";
 import { ModalFrame } from "@/components/ModalFrame";
 import { css } from "@emotion/react";
 import { Noto_Sans_JP } from "next/font/google";
-import Image from "next/image";
+
 import { ReactNode } from "react";
 const notoSansJP = Noto_Sans_JP({
   // Japanese font needs this settings, as index.d.ts doesn't allow subsets = japanese, which is probably due to the large size of japanese font
   preload: false, // removing this will cause error for missing subsets
   display: "swap", // removing this will unapplied japanese font, BUT THIS CAUSES LAYOUT SHIFT...!!!
 });
-
-const MobileScreenshot = () => (
-  <Image
-    css={css`
-      display: block;
-      margin: 0 auto;
-      @media (max-width: 768px) {
-        width: 100%;
-        height: auto;
-      }
-    `}
-    src="/images/sign-in-with-google-1-3.png"
-    width="320" // desktop size
-    height="536" // desktop size
-    alt="screenshot on mobile"
-  />
-);
 
 interface MainContainerProps {
   children: ReactNode;
@@ -53,7 +37,11 @@ export default function Home() {
     <div className={notoSansJP.className}>
       <MainContainer>
         <ModalFrame position="middle" message="this is the modal text">
-          <MobileScreenshot />
+          <MobileScreenshot
+            width={320}
+            height={536}
+            src="/images/sign-in-with-google-1-3.png"
+          />
         </ModalFrame>
       </MainContainer>
     </div>
