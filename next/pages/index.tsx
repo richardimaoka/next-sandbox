@@ -1,7 +1,7 @@
 import { Browser } from "@/components/Browser";
 import { Column } from "@/components/Column";
 import { MainContainer } from "@/components/MainContainer";
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { Noto_Sans_JP } from "next/font/google";
 import { useEffect, useState } from "react";
 
@@ -11,6 +11,28 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap", // removing this will unapplied japanese font, BUT THIS CAUSES LAYOUT SHIFT...!!!
 });
 
+const FlickeringTrail = () => {
+  const flickering = keyframes`
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+  `;
+  return (
+    <span
+      css={css`
+        animation: ${flickering} 2s infinite;
+      `}
+    >
+      |
+    </span>
+  );
+};
 export default function Home() {
   const command = "mkdir sign-in-with-google-experiment";
   const [writtenLength, setWrittenLength] = useState(0);
@@ -38,7 +60,10 @@ export default function Home() {
         border-bottom: 1px solid #333333;
       `}
     >
-      <code>{command?.substring(0, writtenLength)}</code>
+      <code>
+        {command?.substring(0, writtenLength)}
+        <FlickeringTrail />
+      </code>
     </pre>
   );
 }
