@@ -3,6 +3,7 @@ import { Column } from "@/components/Column";
 import { MainContainer } from "@/components/MainContainer";
 import { css } from "@emotion/react";
 import { Noto_Sans_JP } from "next/font/google";
+import { useEffect, useState } from "react";
 
 const notoSansJP = Noto_Sans_JP({
   // Japanese font needs this settings, as index.d.ts doesn't allow subsets = japanese, which is probably due to the large size of japanese font
@@ -11,55 +12,33 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export default function Home() {
+  const command = "mkdir sign-in-with-google-experiment";
+  const [writtenLength, setWrittenLength] = useState(0);
+
+  useEffect(() => {
+    if (command && writtenLength < command.length) {
+      const incrementStep = command.length / 10;
+      const nextLength = Math.min(
+        writtenLength + incrementStep,
+        command.length
+      );
+      setTimeout(() => {
+        setWrittenLength(nextLength);
+      }, 20);
+    }
+  });
+
   return (
-    <div className={notoSansJP.className}>
-      <div
-        css={css`
-          display: flex;
-          gap: 16px;
-        `}
-      >
-        <Column>
-          <div
-            css={css`
-              flex-shrink: 0;
-              width: 800px;
-              height: 1000px;
-              background-color: #f0f0f0;
-            `}
-          />
-        </Column>
-        <Column>
-          <div
-            css={css`
-              flex-shrink: 0;
-              width: 1000px;
-              height: 1800px;
-              background-color: #f0f0f0;
-            `}
-          />
-        </Column>
-        <Column>
-          <div
-            css={css`
-              flex-shrink: 0;
-              width: 800px;
-              height: 1000px;
-              background-color: #f0f0f0;
-            `}
-          />
-        </Column>
-        <Column>
-          <div
-            css={css`
-              flex-shrink: 0;
-              width: 900px;
-              height: 1200px;
-              background-color: #f0f0f0;
-            `}
-          />
-        </Column>
-      </div>
-    </div>
+    <pre
+      css={css`
+        margin: 1px 0px;
+        padding: 4px;
+        background-color: #1e1e1e;
+        color: #f1f1f1;
+        border-bottom: 1px solid #333333;
+      `}
+    >
+      <code>{command?.substring(0, writtenLength)}</code>
+    </pre>
   );
 }
