@@ -85,7 +85,12 @@ export default function Home() {
 
           width: 768px;
           height: 100vh;
-          overflow-y: auto;
+
+          // carousel container
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          overflow-x: auto; // buttons are the only way to scroll
+          overflow-y: hidden; // let inner column handle y-axis scroll
         `}
       >
         {list.map((x) => (
@@ -94,6 +99,9 @@ export default function Home() {
             css={css`
               // important to avoid column-width shrink
               flex-shrink: 0;
+
+              // carousel scrol to stop
+              scroll-snap-align: start;
             `}
           >
             <ChildBox />
