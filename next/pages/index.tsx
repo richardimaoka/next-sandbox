@@ -1,5 +1,7 @@
 import { css } from "@emotion/react";
 import { Noto_Sans_JP } from "next/font/google";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 
 const notoSansJP = Noto_Sans_JP({
@@ -68,6 +70,8 @@ const FixedButton = () => (
 
 export default function Home() {
   const list = [1, 2, 3, 4];
+  const router = useRouter();
+  const test = typeof router.query.test === "string" ? router.query.test : "a";
 
   return (
     <>
@@ -84,7 +88,7 @@ export default function Home() {
           }
 
           width: 768px;
-          height: 100vh;
+          height: 50vh;
 
           // carousel container
           scroll-snap-type: x mandatory;
@@ -107,6 +111,18 @@ export default function Home() {
             <ChildBox />
           </div>
         ))}
+      </div>
+      <div
+        css={css`
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+          width: 768px;
+          background-color: #1e1e1e;
+          color: white;
+        `}
+      >
+        <Link href={{ pathname: "/", query: { test: test + "a" } }}>test</Link>
       </div>
     </>
   );
