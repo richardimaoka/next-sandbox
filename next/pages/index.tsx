@@ -1,7 +1,4 @@
-import { Browser } from "@/components/Browser";
-import { Column } from "@/components/Column";
-import { MainContainer } from "@/components/MainContainer";
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 import { Noto_Sans_JP } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 
@@ -34,12 +31,13 @@ const ChildBox = () => {
         }
 
         height: 300px;
-        width: 400px;
+        width: 768px;
         margin: 10px 0;
 
         background-color: #1e1e1e;
         color: white;
 
+        // layout inner contents
         display: flex;
         justify-content: center;
         align-items: center;
@@ -69,10 +67,17 @@ const FixedButton = () => (
 );
 
 export default function Home() {
+  const list = [1, 2, 3, 4];
+
   return (
     <>
       <div
         css={css`
+          // flex to allow multiple columns
+          display: flex;
+          gap: 20px;
+
+          margin: 0 auto;
           @media (max-width: 768px) {
             width: 100vw;
             height: 100svh;
@@ -83,9 +88,18 @@ export default function Home() {
           overflow-y: auto;
         `}
       >
-        <ChildBox />
+        {list.map((x) => (
+          <div
+            key={x}
+            css={css`
+              // important to avoid column-width shrink
+              flex-shrink: 0;
+            `}
+          >
+            <ChildBox />
+          </div>
+        ))}
       </div>
-      <FixedButton />
     </>
   );
 }
