@@ -50,21 +50,42 @@ const ChildBox = () => {
   );
 };
 
+const FixedButton = () => (
+  <button
+    css={css`
+      position: fixed;
+      bottom: 0px;
+      right: 0px;
+      font-size: 20px;
+      width: 100px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+      border-style: none;
+    `}
+  >
+    next
+  </button>
+);
+
 export default function Home() {
   return (
-    <div
-      css={css`
-        @media (max-width: 768px) {
-          width: 100vw;
-          height: 100vh;
-        }
+    <>
+      <div
+        css={css`
+          @media (max-width: 768px) {
+            width: 100vw;
+            height: 100svh;
+          }
 
-        width: 768px;
-        height: 100vh;
-        overflow-y: auto;
-      `}
-    >
-      <ChildBox />
-    </div>
+          width: 768px;
+          height: 100vh;
+          overflow-y: auto;
+        `}
+      >
+        <ChildBox />
+      </div>
+      <FixedButton />
+    </>
   );
 }
