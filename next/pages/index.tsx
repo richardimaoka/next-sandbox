@@ -69,9 +69,19 @@ const FixedButton = () => (
 );
 
 export default function Home() {
-  const list = [1, 2, 3, 4];
+  console.log("Home rendering");
+  const [list, setList] = useState([1, 2, 3, 4]);
   const router = useRouter();
   const test = typeof router.query.test === "string" ? router.query.test : "a";
+
+  useEffect(() => {
+    fetch("/api/list")
+      .then((res) => res.json())
+      .then((list: any) => {
+        console.log("returned from api is", list);
+        setList(list);
+      });
+  }, [router]);
 
   return (
     <>
