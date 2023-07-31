@@ -130,7 +130,6 @@ export default function Home() {
             css={css`
               // important to avoid column-width shrink
               flex-shrink: 0;
-
               // carousel scrol to stop
               scroll-snap-align: start;
             `}
