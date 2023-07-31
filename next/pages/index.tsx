@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { GetServerSideProps } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,7 +11,7 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap", // removing this will unapplied japanese font, BUT THIS CAUSES LAYOUT SHIFT...!!!
 });
 
-const ChildBox = () => {
+const ChildBox = ({ num }: { num: number }) => {
   const [content, setContent] = useState("");
   const ref = useRef<HTMLDivElement>(null);
 
@@ -41,11 +42,13 @@ const ChildBox = () => {
 
         // layout inner contents
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       `}
     >
-      {content}
+      <div>{content}</div>
+      <div>{num}</div>
     </div>
   );
 };
@@ -67,6 +70,20 @@ const FixedButton = () => (
     next
   </button>
 );
+
+type Repo = {
+  name: string;
+  stargazers_count: number;
+};
+
+export const getServerSideProps: GetServerSideProps<{
+  repo: Repo;
+}> = async () => {
+  console.log("getServerSideProps");
+  const res = await fetch("https://api.github.com/repos/vercel/next.js");
+  const repo = await res.json();
+  return { props: { repo } };
+};
 
 export default function Home() {
   console.log("Home rendering");
@@ -107,9 +124,9 @@ export default function Home() {
           overflow-y: hidden; // let inner column handle y-axis scroll
         `}
       >
-        {list.map((x) => (
+        {list.map((x, index) => (
           <div
-            key={x}
+            key={index}
             css={css`
               // important to avoid column-width shrink
               flex-shrink: 0;
@@ -118,7 +135,7 @@ export default function Home() {
               scroll-snap-align: start;
             `}
           >
-            <ChildBox />
+            <ChildBox num={x} />
           </div>
         ))}
       </div>
