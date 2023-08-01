@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { FlickeringTrail } from "./FlickeringTrail";
-import { background, primaryText, surface } from "../../libs/terminalColors";
+import { primaryText, surface } from "../../libs/terminalColors";
 
 interface TerminalCommandProps {
   command: string;
