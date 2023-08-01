@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { GetServerSideProps } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Link from "next/link";
@@ -79,7 +79,7 @@ type Repo = {
 export const getServerSideProps: GetServerSideProps<{
   repo: Repo;
 }> = async () => {
-  console.log("getServerSideProps");
+  console.log("getServerSideProps called ", new Date().toISOString());
   const res = await fetch("https://api.github.com/repos/vercel/next.js");
   const repo = await res.json();
   return { props: { repo } };
@@ -87,18 +87,23 @@ export const getServerSideProps: GetServerSideProps<{
 
 export default function Home() {
   console.log("Home rendering");
-  const [list, setList] = useState([1, 2, 3, 4]);
+  const [animation, setAnimation] = useState(false);
+  const list = [1, 2, 3, 4];
   const router = useRouter();
   const test = typeof router.query.test === "string" ? router.query.test : "a";
+  const [qs, setQs] = useState("");
 
-  useEffect(() => {
-    fetch("/api/list")
-      .then((res) => res.json())
-      .then((list: any) => {
-        console.log("returned from api is", list);
-        setList(list);
-      });
-  }, [router]);
+  const slide = keyframes`
+    0% {
+      left: 0px;
+    }
+    100% {
+      left: ${-(768 + 20) * 2}px;
+  }`;
+
+  const onClick = () => {
+    setAnimation(true);
+  };
 
   return (
     <>
@@ -130,8 +135,12 @@ export default function Home() {
             css={css`
               // important to avoid column-width shrink
               flex-shrink: 0;
+
               // carousel scrol to stop
               scroll-snap-align: start;
+
+              position: relative;
+              /* animation: ${slide} 1s forwards; */
             `}
           >
             <ChildBox num={x} />
@@ -148,7 +157,14 @@ export default function Home() {
           color: white;
         `}
       >
-        <Link href={{ pathname: "/", query: { test: test + "a" } }}>test</Link>
+        <button
+          onClick={() => {
+            router.push({ query: { test: qs } });
+            setQs(qs + "a");
+          }}
+        >
+          update query string = {qs}
+        </button>
       </div>
     </>
   );
