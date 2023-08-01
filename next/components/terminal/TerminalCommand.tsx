@@ -1,11 +1,27 @@
 import { css } from "@emotion/react";
 import { FlickeringTrail } from "./FlickeringTrail";
-import { primaryText, surface } from "../../libs/terminalColors";
+import { primaryText, promptColor, surface } from "../../libs/terminalColors";
+import { Source_Code_Pro } from "next/font/google";
+
+const source_code_pro = Source_Code_Pro({ weight: "400", subsets: ["latin"] });
 
 interface TerminalCommandProps {
   command: string;
   fold: boolean;
 }
+
+const Prompt = () => (
+  <span
+    css={css`
+      display: inline-block;
+      width: 8px;
+      margin-right: 12px;
+      color: ${promptColor};
+    `}
+  >
+    &gt;
+  </span>
+);
 
 export const TerminalCommand = ({ command, fold }: TerminalCommandProps) => {
   const foldCss = css`
@@ -19,15 +35,24 @@ export const TerminalCommand = ({ command, fold }: TerminalCommandProps) => {
   return (
     <pre
       css={css`
-        margin: 1px 0px;
         padding: 4px;
+        font-size: 12px;
         background-color: ${surface};
         color: ${primaryText};
+        font-family: inherit;
         ${fold ? foldCss : ""}
       `}
     >
-      <code>
-        &gt; {command} <FlickeringTrail />
+      <code className={source_code_pro.className}>
+        <Prompt />
+        <span
+          css={css`
+            display: inline-block;
+          `}
+        >
+          {command}
+        </span>
+        <FlickeringTrail />
       </code>
     </pre>
   );

@@ -1,5 +1,8 @@
 import { css } from "@emotion/react";
 import { secondaryText, surface } from "../../libs/terminalColors";
+import { Source_Code_Pro } from "next/font/google";
+
+const source_code_pro = Source_Code_Pro({ weight: "400", subsets: ["latin"] });
 
 interface TerminalOutputProps {
   output: string;
@@ -18,14 +21,14 @@ export const TerminalOutput = ({ output, fold }: TerminalOutputProps) => {
   return (
     <pre
       css={css`
-        margin: 1px 0px;
+        font-size: 12px;
         padding: 4px;
         background-color: ${surface};
         color: ${secondaryText};
         ${fold ? foldCss : ""}
       `}
     >
-      <code>{output}</code>
+      <code className={source_code_pro.className}>{output}</code>
     </pre>
   );
 };
