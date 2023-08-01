@@ -1,3 +1,5 @@
+import { TerminalCommand } from "@/components/terminal/TerminalCommand";
+
 export default function Home() {
-  return <div> a </div>;
+  return <TerminalCommand command="npm run dev" />;
 }
