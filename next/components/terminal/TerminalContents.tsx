@@ -27,6 +27,7 @@ export const TerminalContents = ({ elements, fold }: TerminalContentsProps) => {
               key={index}
               command={element.text}
               fold={fold ? true : false}
+              animate={element.animate ? true : false}
             />
           );
         } else {
