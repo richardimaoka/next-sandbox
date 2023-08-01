@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { TerminalContents } from "./TerminalContents";
 import { TerminalElement } from "./TerminalElement";
+import { CurrentDirectory } from "./CurrentDirectory";
 
 interface TerminalColumnProps {
   elements: TerminalElement[];
@@ -15,6 +16,7 @@ export const TerminalColumn = ({ elements, fold }: TerminalColumnProps) => {
         overflow-x: scroll;
       `}
     >
+      <CurrentDirectory currentDirectory="myproj" />
       <TerminalContents elements={elements} fold={fold} />
     </div>
   );
