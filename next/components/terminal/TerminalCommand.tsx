@@ -35,15 +35,19 @@ export const TerminalCommand = ({ command, fold }: TerminalCommandProps) => {
   return (
     <pre
       css={css`
+        font-size: 0.8em;
         padding: 4px;
-        font-size: 12px;
         background-color: ${surface};
         color: ${primaryText};
-        font-family: inherit;
         ${fold ? foldCss : ""}
       `}
     >
-      <code className={source_code_pro.className}>
+      <code
+        className={source_code_pro.className}
+        css={css`
+          font-size: 12px;
+        `}
+      >
         <Prompt />
         <span
           css={css`

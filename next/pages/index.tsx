@@ -1,8 +1,8 @@
 import { TerminalColumn } from "@/components/terminal/TerminalColumn";
-import { Element } from "@/components/terminal/TerminalColumn";
+import { TerminalElement } from "@/components/terminal/TerminalElement";
 
 export default function Home() {
-  const data: Element[] = [
+  const data: TerminalElement[] = [
     { kind: "command", text: "docker pull httpd" },
     {
       kind: "output",
@@ -33,5 +33,5 @@ asia-northeast1-docker.pkg.dev/richard-playground-382018/google-signin-experimen
     },
   ];
 
-  return <TerminalColumn elements={data} />;
+  return <TerminalColumn elements={data} fold={false} />;
 }

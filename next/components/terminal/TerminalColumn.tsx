@@ -12,6 +12,7 @@ export const TerminalColumn = ({ elements, fold }: TerminalColumnProps) => {
     <div
       css={css`
         width: 768px;
+        overflow-x: scroll;
       `}
     >
       <TerminalContents elements={elements} fold={fold} />
