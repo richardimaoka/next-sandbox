@@ -13,3 +13,13 @@
 .flickering {
   animation: flicker 1s infinite;
 }
+
+.output {
+  padding: 4px;
+  background-color: var(--color-surface);
+  color: var(--color-secondary-text);
+}
+
+.output code {
+  font-size: 12px;
+}
