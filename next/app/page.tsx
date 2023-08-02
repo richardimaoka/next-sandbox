@@ -1,9 +1,9 @@
-import { TerminalColumn } from "./terminal/TerminalColumn";
+import { Column } from "./column/Column";
 
 export default function Home() {
   return (
     <main>
-      <TerminalColumn />
+      <Column />
     </main>
   );
 }

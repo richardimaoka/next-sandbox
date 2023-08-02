@@ -1,0 +1,14 @@
+.tabSelected {
+  border: 1px solid var(--color-primary-text);
+  border-bottom: none;
+  padding: 4px 8px;
+  padding-bottom: 8px;
+  background-color: var(--color-menu);
+  color: var(--color-primary-text);
+}
+
+.tab {
+  padding: 4px 8px;
+  background-color: var(--color-surace);
+  color: var(--color-disabled-text);
+}
