@@ -1,9 +1,7 @@
 import { css } from "@emotion/react";
 import { FlickeringTrail } from "./FlickeringTrail";
 import { primaryText, promptColor, surface } from "../../libs/terminalColors";
-import { Source_Code_Pro } from "next/font/google";
-
-const source_code_pro = Source_Code_Pro({ weight: "400", subsets: ["latin"] });
+import { source_code_pro } from "@/libs/fonts";
 
 interface TerminalCommandProps {
   command: string;
