@@ -17,7 +17,7 @@ export const CurrentDirectory = ({
         display: flex;
         justify-content: center;
         background-color: ${menu};
-        padding: 4px;
+        padding: 6px 0px;
       `}
     >
       <DirectoryIcon />
@@ -26,7 +26,7 @@ export const CurrentDirectory = ({
         css={css`
           display: inline-block;
           margin-left: 2px;
-          font-size: 12px;
+          font-size: 14px;
           color: ${primaryText};
         `}
       >
