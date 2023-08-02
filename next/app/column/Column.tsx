@@ -1,11 +1,12 @@
 import { Terminal } from "../terminal/Terminal";
-import { Tab } from "./Tab";
+import { Header } from "./Header";
 import styles from "./column.module.css";
 
 export const Column = () => {
+  const tabs = ["Terminal", "Source Code", "Browser", "Dev Tools"];
   return (
     <div>
-      <Tab name="Terminal" selected={true} />
+      <Header names={tabs} selected={"Terminal"} />
       <div className={styles.terminal}>
         <Terminal />
       </div>

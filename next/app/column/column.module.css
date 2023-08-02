@@ -1,14 +1,36 @@
+.header {
+  background-color: var(--color-background);
+  padding-top: 8px;
+  border-bottom: 1px solid var(--color-primary-text);
+}
+
 .tabSelected {
-  border: 1px solid var(--color-primary-text);
-  border-bottom: none;
   padding: 4px 8px;
-  padding-bottom: 8px;
+  border-radius: 4px 4px 0px 0px;
+  font-size: 12px;
+
+  /*specific to tabSelected*/
   background-color: var(--color-menu);
   color: var(--color-primary-text);
+  padding-bottom: 8px;
+  border: 1px solid var(--color-primary-text);
+  border-bottom: none;
 }
 
 .tab {
   padding: 4px 8px;
-  background-color: var(--color-surace);
+  border-radius: 4px 4px 0px 0px;
+  font-size: 12px;
+
+  /*specific to tab (UnSelected)*/
+  background-color: var(--color-surface);
   color: var(--color-disabled-text);
+}
+
+.tabs {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  top: 1px;
 }
