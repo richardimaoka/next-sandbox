@@ -2,25 +2,13 @@ import { css } from "@emotion/react";
 import { FlickeringTrail } from "./FlickeringTrail";
 import { primaryText, promptColor, surface } from "../../libs/terminalColors";
 import { source_code_pro } from "@/libs/fonts";
+import { TerminalPrompt } from "./TerminalPrompt";
 
 interface TerminalCommandProps {
   command: string;
   fold: boolean;
   animate: boolean;
 }
-
-const Prompt = () => (
-  <span
-    css={css`
-      display: inline-block;
-      width: 8px;
-      margin-right: 8px;
-      color: ${promptColor};
-    `}
-  >
-    &gt;
-  </span>
-);
 
 export const TerminalCommand = ({
   command,
@@ -45,7 +33,7 @@ export const TerminalCommand = ({
       `}
     >
       <code className={source_code_pro.className}>
-        <Prompt />
+        <TerminalPrompt />
         {command}
         {animate && <FlickeringTrail />}
       </code>
