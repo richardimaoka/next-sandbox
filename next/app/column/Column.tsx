@@ -7,9 +7,7 @@ export const Column = () => {
   return (
     <div>
       <Header names={tabs} selected={"Terminal"} />
-      <div className={styles.terminal}>
-        <Terminal />
-      </div>
+      <Terminal />
     </div>
   );
 };
