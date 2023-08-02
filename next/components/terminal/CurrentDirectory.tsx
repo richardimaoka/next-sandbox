@@ -18,6 +18,8 @@ export const CurrentDirectory = ({
         justify-content: center;
         background-color: ${menu};
         padding: 6px 0px;
+
+        /* border-top: 1px solid ${primaryText}; */
       `}
     >
       <DirectoryIcon />

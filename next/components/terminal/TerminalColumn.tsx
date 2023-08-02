@@ -3,6 +3,7 @@ import { TerminalContents } from "./TerminalContents";
 import { TerminalElement } from "./TerminalElement";
 import { CurrentDirectory } from "./CurrentDirectory";
 import { background, menu, primaryText } from "@/libs/terminalColors";
+import { Header } from "../column/Header";
 
 interface TerminalColumnProps {
   elements: TerminalElement[];
@@ -21,26 +22,7 @@ export const TerminalColumn = ({ elements, fold }: TerminalColumnProps) => {
         overflow-x: scroll;
       `}
     >
-      <div
-        css={css`
-          display: flex;
-          background-color: ${background};
-          padding-left: 8px;
-          padding-top: 8px;
-        `}
-      >
-        <div
-          css={css`
-            color: ${primaryText};
-            font-size: 12px;
-            padding: 4px 8px;
-            background-color: ${menu};
-            border-radius: 4px 4px 0px 0px;
-          `}
-        >
-          Terminal
-        </div>
-      </div>
+      <Header />
       <CurrentDirectory currentDirectory="myproj" />
       <TerminalContents elements={elements} fold={fold} />
     </div>
