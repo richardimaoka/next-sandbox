@@ -1,3 +1,4 @@
+import { source_code_pro } from "../fonts/fonts";
 import styles from "./terminal.module.css";
 
 interface TerminalOutputProps {
@@ -6,17 +7,10 @@ interface TerminalOutputProps {
 }
 
 export const TerminalOutput = ({ output, fold }: TerminalOutputProps) => {
-  // const foldCss = css`
-  //   white-space: pre-wrap; /* Since CSS 2.1 */
-  //   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-  //   white-space: -pre-wrap; /* Opera 4-6 */
-  //   white-space: -o-pre-wrap; /* Opera 7 */
-  //   word-wrap: break-word; /* Internet Explorer 5.5+ */
-  // `;
-
+  const className = fold ? styles.output + " " + styles.fold : styles.output;
   return (
-    <pre className={styles.output}>
-      <code>{output}</code>
+    <pre className={className}>
+      <code className={source_code_pro.className}>{output}</code>
     </pre>
   );
 };
