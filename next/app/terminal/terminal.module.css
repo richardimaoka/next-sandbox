@@ -10,6 +10,23 @@
   }
 }
 
+.command {
+  padding: 4px;
+  background-color: var(--color-surface);
+  color: var(--color-primary-text);
+}
+
+.command code {
+  font-size: 12px;
+}
+
+.prompt {
+  display: inline-block;
+  width: 8px;
+  margin-right: 8px;
+  color: var(--color-prompt);
+}
+
 .flickering {
   animation: flicker 1s infinite;
 }

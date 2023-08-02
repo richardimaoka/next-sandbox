@@ -1,8 +1,14 @@
+import { TerminalCommand } from "./terminal/TerminalCommand";
 import { TerminalOutput } from "./terminal/TerminalOutput";
 
 export default function Home() {
   return (
     <main>
+      <TerminalCommand
+        command="docker pull httpd"
+        fold={false}
+        animate={true}
+      />
       <TerminalOutput
         output={`Using default tag: latest
 latest: Pulling from library/httpd
