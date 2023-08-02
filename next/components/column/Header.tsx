@@ -22,12 +22,16 @@ export const Header = () => {
         background-color: ${background};
         padding-left: 8px;
         padding-top: 8px;
+        border-bottom: 1px solid ${primaryText};
       `}
     >
       <div
         css={css`
           display: flex;
+          align-items: flex-start;
           gap: 8px;
+          position: relative;
+          top: 1px;
         `}
       >
         {columns.map((col, index) => (
@@ -36,7 +40,11 @@ export const Header = () => {
             css={css`
               color: ${index === 0 ? primaryText : disabledText};
               font-size: 12px;
-              padding: 4px 8px;
+              padding-top: 4px;
+              padding-left: 8px;
+              padding-right: 8px;
+              padding-bottom: ${index === 0 ? 8 + 1 : 4}px;
+
               background-color: ${menu};
 
               border-radius: 4px 4px 0px 0px;
