@@ -32,7 +32,12 @@ export const TerminalCommand = ({
         ${fold ? foldCss : ""}
       `}
     >
-      <code className={source_code_pro.className}>
+      <code
+        className={source_code_pro.className}
+        css={css`
+          font-size: 33px;
+        `}
+      >
         <TerminalPrompt />
         {command}
         {animate && <FlickeringTrail />}
