@@ -35,7 +35,7 @@ Digest: sha256:d7262c0f29a26349d6af45199b2770d499c74d45cee5c47995a1ebb336093088
 Status: Downloaded newer image for httpd:latest
 docker.io/library/httpd:latest`}
         fold={false}
-      />{" "}
+      />
       <TerminalOutput
         output={`Using default tag: latest
 latest: Pulling from library/httpd
@@ -48,7 +48,7 @@ Digest: sha256:d7262c0f29a26349d6af45199b2770d499c74d45cee5c47995a1ebb336093088
 Status: Downloaded newer image for httpd:latest
 docker.io/library/httpd:latest`}
         fold={false}
-      />{" "}
+      />
       <TerminalOutput
         output={`Using default tag: latest
 latest: Pulling from library/httpd
@@ -61,7 +61,7 @@ Digest: sha256:d7262c0f29a26349d6af45199b2770d499c74d45cee5c47995a1ebb336093088
 Status: Downloaded newer image for httpd:latest
 docker.io/library/httpd:latest`}
         fold={false}
-      />{" "}
+      />
       <TerminalOutput
         output={`Using default tag: latest
 latest: Pulling from library/httpd
@@ -74,7 +74,7 @@ Digest: sha256:d7262c0f29a26349d6af45199b2770d499c74d45cee5c47995a1ebb336093088
 Status: Downloaded newer image for httpd:latest
 docker.io/library/httpd:latest`}
         fold={false}
-      />{" "}
+      />
       <TerminalOutput
         output={`Using default tag: latest
 latest: Pulling from library/httpd
@@ -87,7 +87,7 @@ Digest: sha256:d7262c0f29a26349d6af45199b2770d499c74d45cee5c47995a1ebb336093088
 Status: Downloaded newer image for httpd:latest
 docker.io/library/httpd:latest`}
         fold={false}
-      />{" "}
+      />
       <TerminalOutput
         output={`Using default tag: latest
 latest: Pulling from library/httpd

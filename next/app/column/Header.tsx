@@ -1,4 +1,5 @@
 import { Tab } from "./Tab";
+import { ToInitialStepButton } from "./ToInitialStepButton";
 import styles from "./column.module.css";
 
 interface HeaderProps {
@@ -14,6 +15,7 @@ export const Header = ({ names, selected }: HeaderProps) => {
           <Tab key={name} name={name} selected={name === selected} />
         ))}
       </div>
+      <ToInitialStepButton />
     </div>
   );
 };
