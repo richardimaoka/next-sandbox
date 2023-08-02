@@ -11,11 +11,15 @@
 }
 
 .terminal {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-surface);
+  height: calc(100% - 37px); /*column header = 37px*/
 }
 
 .contents {
   padding: 1px 8px;
+  overflow-y: auto;
 }
 
 .command {

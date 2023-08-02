@@ -5,7 +5,7 @@ import styles from "./column.module.css";
 export const Column = () => {
   const tabs = ["Terminal", "Source Code", "Browser", "Dev Tools"];
   return (
-    <div>
+    <div className={styles.column}>
       <Header names={tabs} selected={"Terminal"} />
       <Terminal />
     </div>
