@@ -19,21 +19,13 @@ export const TerminalOutput = ({ output, fold }: TerminalOutputProps) => {
   return (
     <pre
       css={css`
-        font-size: 0.8em;
         padding: 4px;
         background-color: ${surface};
         color: ${secondaryText};
         ${fold ? foldCss : ""}
       `}
     >
-      <code
-        className={source_code_pro.className}
-        css={css`
-          font-size: 8px;
-        `}
-      >
-        {output}
-      </code>
+      <code className={source_code_pro.className}>{output}</code>
     </pre>
   );
 };

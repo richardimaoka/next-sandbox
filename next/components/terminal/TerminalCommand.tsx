@@ -14,7 +14,7 @@ const Prompt = () => (
     css={css`
       display: inline-block;
       width: 8px;
-      margin-right: 12px;
+      margin-right: 8px;
       color: ${promptColor};
     `}
   >
@@ -38,27 +38,15 @@ export const TerminalCommand = ({
   return (
     <pre
       css={css`
-        font-size: 0.8em;
         padding: 4px;
         background-color: ${surface};
         color: ${primaryText};
         ${fold ? foldCss : ""}
       `}
     >
-      <code
-        className={source_code_pro.className}
-        css={css`
-          font-size: 12px;
-        `}
-      >
+      <code className={source_code_pro.className}>
         <Prompt />
-        <span
-          css={css`
-            display: inline-block;
-          `}
-        >
-          {command}
-        </span>
+        {command}
         {animate && <FlickeringTrail />}
       </code>
     </pre>
