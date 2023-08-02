@@ -10,6 +10,14 @@
   }
 }
 
+.terminal {
+  background-color: var(--color-surface);
+}
+
+.contents {
+  padding: 1px 8px;
+}
+
 .command {
   padding: 4px;
   background-color: var(--color-surface);
@@ -23,7 +31,8 @@
 .prompt {
   display: inline-block;
   width: 8px;
-  margin-right: 8px;
+  font-size: 12px;
+  margin-right: 2px;
   color: var(--color-prompt);
 }
 
@@ -59,7 +68,7 @@
 
 .currentDir span {
   display: inline-block;
-  margin-left: 2px;
+  margin-left: 4px;
   font-size: 14px;
   color: var(--color-primary-text);
 }
