@@ -49,3 +49,17 @@
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
+
+.currentDir {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-menu);
+  padding: 6px 0px;
+}
+
+.currentDir span {
+  display: inline-block;
+  margin-left: 2px;
+  font-size: 14px;
+  color: var(--color-primary-text);
+}

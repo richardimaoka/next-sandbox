@@ -1,9 +1,11 @@
+import { CurrentDirectory } from "./terminal/CurrentDirectory";
 import { TerminalCommand } from "./terminal/TerminalCommand";
 import { TerminalOutput } from "./terminal/TerminalOutput";
 
 export default function Home() {
   return (
     <main>
+      <CurrentDirectory currentDirectory="~" />
       <TerminalCommand
         command="docker pull httpd"
         fold={false}
