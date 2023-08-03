@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FileImg from "../../public/images/backward-fast-solid.svg";
+import FileImg from "../../../public/images/backward-fast-solid.svg";
 
 export const BackwardFastIcon = (): JSX.Element => {
   return (
