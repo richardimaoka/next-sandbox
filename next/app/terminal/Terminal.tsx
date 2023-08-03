@@ -5,7 +5,7 @@ import styles from "./terminal.module.css";
 export const Terminal = () => {
   return (
     <div className={styles.terminal}>
-      <CurrentDirectory currentDirectory="my-app" />
+      <CurrentDirectory currentDirectory="myproj" />
       <TerminalContents />
     </div>
   );
