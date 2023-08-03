@@ -1,0 +1,22 @@
+.filenode {
+  display: flex;
+  gap: 4px;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 8px;
+}
+
+.filenode.selected {
+  background-color: #252526;
+}
+
+.nodename {
+  width: fit-content;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.filenode > .currentdirectory {
+  color: #a1a1a1;
+}
