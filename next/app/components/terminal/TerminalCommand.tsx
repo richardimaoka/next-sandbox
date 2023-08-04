@@ -18,7 +18,12 @@ export const TerminalCommand = ({
   return (
     <pre className={className}>
       <TerminalPrompt />
-      <code className={source_code_pro.className}>{command}</code>
+      <code
+        // needs to specify font here, as <code> has its own font
+        className={source_code_pro.className}
+      >
+        {command}
+      </code>
       {animate && <FlickeringTrail />}
     </pre>
   );

@@ -7,8 +7,8 @@
   padding-right: 8px;
 }
 
-.filenode.selected {
-  background-color: #252526;
+.filenode.updated {
+  background-color: #748d2e;
 }
 
 .nodename {

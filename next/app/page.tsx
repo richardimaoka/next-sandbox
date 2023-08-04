@@ -1,5 +1,6 @@
 import { Column } from "./components/column/Column";
 import { FileNodeComponent } from "./components/sourcecode/filetree/FileNodeComponent";
+import { source_code_pro } from "./components/fonts/fonts";
 
 export default function Home() {
   const fileTree = [
@@ -10,17 +11,19 @@ export default function Home() {
   ];
   return (
     <main>
-      {fileTree.map((file) => (
-        <FileNodeComponent
-          key={file.filePath}
-          nodeType={file.nodeType as "FILE" | "DIRECTORY"}
-          name={file.filePath}
-          filePath={file.filePath}
-          offset={0}
-          isUpdated={false}
-          step="1"
-        />
-      ))}
+      <div className={source_code_pro.className}>
+        {fileTree.map((file) => (
+          <FileNodeComponent
+            key={file.filePath}
+            nodeType={file.nodeType as "FILE" | "DIRECTORY"}
+            name={file.filePath}
+            filePath={file.filePath}
+            offset={0}
+            isUpdated={false}
+            step="1"
+          />
+        ))}
+      </div>
     </main>
   );
 }

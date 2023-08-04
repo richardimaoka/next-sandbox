@@ -16,10 +16,13 @@ export const FileNodeComponent = (
   props: FileNodeComponentProps
 ): JSX.Element => {
   const isCurrentDirectory = props.filePath === props.currentDirectory;
+  const filenodeStyle = props.isUpdated
+    ? `${styles.filenode} ${styles.updated}`
+    : styles.filenode;
 
   const Component = () => (
     <div
-      className={styles.filenode}
+      className={filenodeStyle}
       style={{ paddingLeft: `${props.offset * 16}px` }}
     >
       <FileNodeIcon nodeType={props.nodeType} />
