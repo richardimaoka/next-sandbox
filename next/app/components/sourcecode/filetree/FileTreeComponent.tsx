@@ -11,10 +11,7 @@ export const FileTreeComponent = ({
   const fileTree = [
     { nodeType: "FILE", filePath: ".gitignore" },
     { nodeType: "FILE", filePath: "index.html" },
-    {
-      nodeType: "FILE",
-      filePath: "package-lock.json",
-    },
+    { nodeType: "FILE", filePath: "package-lock.json" },
     { nodeType: "DIRECTORY", filePath: "package.json" },
   ];
 
