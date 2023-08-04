@@ -20,3 +20,23 @@
 .filenode > .currentdirectory {
   color: #a1a1a1;
 }
+
+.treeheader {
+  display: flex;
+  padding: 5px 8px;
+  justify-content: end;
+  background-color: var(--color-menu);
+}
+
+.treeheader.folded {
+  background-color: var(--color-sourcecode-menu-unfocused);
+}
+
+.treeheader.expanded {
+  background-color: var(--color-menu);
+}
+
+.treeheader > .projectdir {
+  background-color: var(--color-primary-text);
+  font-size: 12px;
+}

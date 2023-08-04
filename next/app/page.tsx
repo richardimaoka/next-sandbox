@@ -1,6 +1,9 @@
+"use client";
+
 import { Column } from "./components/column/Column";
 import { FileNodeComponent } from "./components/sourcecode/filetree/FileNodeComponent";
 import { source_code_pro } from "./components/fonts/fonts";
+import { FileTreeHeader } from "./components/sourcecode/filetree/FileTreeHeader";
 
 export default function Home() {
   const fileTree = [
@@ -12,6 +15,7 @@ export default function Home() {
   return (
     <main>
       <div className={source_code_pro.className}>
+        <FileTreeHeader isFolded={false} onButtonClick={() => {}} />
         {fileTree.map((file) => (
           <FileNodeComponent
             key={file.filePath}
