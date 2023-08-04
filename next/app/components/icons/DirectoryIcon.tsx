@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 export const DirectoryIcon = (): JSX.Element => {
   return (
     <div className={styles.icon}>
-      <FontAwesomeIcon className={styles.folder} icon={faFolder} size="xs" />
+      <FontAwesomeIcon className={styles.folder} icon={faFolder} />
     </div>
   );
 };

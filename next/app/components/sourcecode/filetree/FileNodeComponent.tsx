@@ -18,7 +18,10 @@ export const FileNodeComponent = (
   const isCurrentDirectory = props.filePath === props.currentDirectory;
 
   const Component = () => (
-    <div className={styles.filenode}>
+    <div
+      className={styles.filenode}
+      style={{ paddingLeft: `${props.offset * 16}px` }}
+    >
       <FileNodeIcon nodeType={props.nodeType} />
       <div className={styles.nodename}>
         {props.name}
