@@ -1,4 +1,5 @@
 import { FileNodeComponent } from "./FileNodeComponent";
+import styles from "./style.module.css";
 
 export interface FileTreeComponentProps {
   isFolded: boolean;
@@ -17,7 +18,7 @@ export const FileTreeComponent = ({
   return isFolded ? (
     <div />
   ) : (
-    <div>
+    <div className={styles.tree}>
       {fileTree.map((file) => (
         <FileNodeComponent
           key={file.filePath}

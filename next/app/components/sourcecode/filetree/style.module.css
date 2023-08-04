@@ -1,6 +1,10 @@
 .pane {
   width: fit-content;
   max-width: 300px;
+  height: 100svh;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -17,6 +21,10 @@
 .header.expanded {
   background-color: var(--color-menu);
   padding: 5px 8px;
+}
+
+.tree {
+  flex-grow: 1;
 }
 
 .filenode {
