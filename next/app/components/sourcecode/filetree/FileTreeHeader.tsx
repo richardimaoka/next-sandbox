@@ -14,8 +14,8 @@ export const FileTreeHeader = ({
   onButtonClick,
 }: FileTreeHeaderProps): JSX.Element => {
   const headerStyle = isFolded
-    ? `${styles.treeheader} ${styles.folded}`
-    : `${styles.treeheader} ${styles.expanded}`;
+    ? `${styles.header} ${styles.folded}`
+    : `${styles.header} ${styles.expanded}`;
 
   return (
     <div className={headerStyle}>

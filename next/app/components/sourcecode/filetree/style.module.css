@@ -25,18 +25,18 @@
   color: #a1a1a1;
 }
 
-.treeheader {
+.header {
   display: flex;
   padding: 5px 8px;
   justify-content: space-between;
   background-color: var(--color-menu);
 }
 
-.treeheader.folded {
+.header.folded {
   background-color: var(--color-sourcecode-menu-unfocused);
 }
 
-.treeheader.expanded {
+.header.expanded {
   background-color: var(--color-menu);
 }
 
