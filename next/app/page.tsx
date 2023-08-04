@@ -15,7 +15,11 @@ export default function Home() {
   return (
     <main>
       <div className={source_code_pro.className}>
-        <FileTreeHeader isFolded={false} onButtonClick={() => {}} />
+        <FileTreeHeader
+          projectDir="sign-in-with-googlesign-in-withwithwithwith-googlesign-in-with-google"
+          isFolded={false}
+          onButtonClick={() => {}}
+        />
         {fileTree.map((file) => (
           <FileNodeComponent
             key={file.filePath}

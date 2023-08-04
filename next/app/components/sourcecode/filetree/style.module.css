@@ -17,14 +17,14 @@
   font-size: 13px;
 }
 
-.filenode > .currentdirectory {
+.currentdirectory {
   color: #a1a1a1;
 }
 
 .treeheader {
   display: flex;
   padding: 5px 8px;
-  justify-content: end;
+  justify-content: space-between;
   background-color: var(--color-menu);
 }
 
@@ -36,7 +36,10 @@
   background-color: var(--color-menu);
 }
 
-.treeheader > .projectdir {
-  background-color: var(--color-primary-text);
+.projectdir {
+  color: var(--color-primary-text);
   font-size: 12px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
