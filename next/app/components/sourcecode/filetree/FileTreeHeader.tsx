@@ -19,7 +19,7 @@ export const FileTreeHeader = ({
 
   return (
     <div className={headerStyle}>
-      <div className={styles.projectdir}>{projectDir}</div>
+      {!isFolded && <div className={styles.projectdir}>{projectDir}</div>}
       <button onClick={onButtonClick}>
         {isFolded ? <AnglesRightIcon /> : <AnglesLeftIcon />}
       </button>

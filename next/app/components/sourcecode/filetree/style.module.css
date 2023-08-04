@@ -1,14 +1,33 @@
 .pane {
+  width: fit-content;
   max-width: 300px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-menu);
+}
+
+.header.folded {
+  background-color: var(--color-sourcecode-menu-unfocused);
+  padding: 5px 4px;
+}
+
+.header.expanded {
+  background-color: var(--color-menu);
+  padding: 5px 8px;
 }
 
 .filenode {
   display: flex;
   gap: 4px;
   color: white;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-right: 8px;
+  padding: 3px 8px;
+}
+
+.filenode:hover {
+  background-color: #748d2e;
 }
 
 .filenode.updated {
@@ -23,21 +42,6 @@
 
 .currentdirectory {
   color: #a1a1a1;
-}
-
-.header {
-  display: flex;
-  padding: 5px 8px;
-  justify-content: space-between;
-  background-color: var(--color-menu);
-}
-
-.header.folded {
-  background-color: var(--color-sourcecode-menu-unfocused);
-}
-
-.header.expanded {
-  background-color: var(--color-menu);
 }
 
 .projectdir {
