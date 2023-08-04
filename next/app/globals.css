@@ -7,6 +7,13 @@
   --color-disabled-text: #757575;
   --color-prompt: #748d2e;
 
+  --color-sourcecode-file-highlighted: #748d2e;
+  --color-sourcecode-surface-openfile: #232323;
+  --color-sourcecode-surface-filetree: #2e2e2e;
+  --color-sourcecode-menu-unfocused: #333333;
+
+  --color-terminal-surface: #252526;
+
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -114,3 +121,8 @@ a {
     color-scheme: dark;
   }
 } */
+
+button {
+  border: none;
+  background: none;
+}
