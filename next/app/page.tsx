@@ -6,14 +6,14 @@ export default function Home() {
     { nodeType: "FILE", filePath: ".gitignore" },
     { nodeType: "FILE", filePath: "index.html" },
     { nodeType: "FILE", filePath: "package-lock.json" },
-    { nodeType: "FILE", filePath: "package.json" },
+    { nodeType: "DIRECTORY", filePath: "package.json" },
   ];
   return (
     <main>
       {fileTree.map((file) => (
         <FileNodeComponent
           key={file.filePath}
-          nodeType={"FILE"}
+          nodeType={file.nodeType as "FILE" | "DIRECTORY"}
           name={file.filePath}
           filePath={file.filePath}
           offset={0}

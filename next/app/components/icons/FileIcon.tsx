@@ -1,6 +1,11 @@
-import Image from "next/image";
-import FileImg from "../../../public/images/file.png";
+import { faFile } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./style.module.css";
 
 export const FileIcon = (): JSX.Element => {
-  return <Image src={FileImg} height="16" width="16" alt="file icon" />;
+  return (
+    <div className={styles.icon}>
+      <FontAwesomeIcon icon={faFile} size="xs" />
+    </div>
+  );
 };
