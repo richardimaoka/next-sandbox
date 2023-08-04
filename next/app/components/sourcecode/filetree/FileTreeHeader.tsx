@@ -1,4 +1,3 @@
-"use client";
 import { AnglesLeftIcon } from "../../icons/AnglesLeftIcon";
 import { AnglesRightIcon } from "../../icons/AnglesRightIcon";
 import styles from "./style.module.css";

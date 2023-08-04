@@ -1,3 +1,7 @@
+.pane {
+  max-width: 300px;
+}
+
 .filenode {
   display: flex;
   gap: 4px;
@@ -42,4 +46,17 @@
   overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #252526; /* or add it to the track */
+}
+.scroll ::-webkit-scrollbar-thumb {
+  background: #37373d;
+  border-radius: 8px;
+}
+.scroll::-webkit-scrollbar-corner {
+  background-color: #252526;
 }
