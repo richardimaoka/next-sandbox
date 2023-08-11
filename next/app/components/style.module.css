@@ -4,4 +4,11 @@
 
 .child {
   color: white;
+  height: 200px;
+  width: 300px;
+  border: solid 1px white;
+}
+
+.button {
+  color: white;
 }

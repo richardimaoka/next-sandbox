@@ -17,6 +17,11 @@ export const ClientParent = ({ children }: ClientParentProps) => {
   return (
     <div className={styles.parent}>
       <div>{JSON.stringify(arr)}</div>
+      <div>
+        {arr.map((n) => (
+          <ClientChild key={n} text={`${n}`} doScroll={n === arr.length - 1} />
+        ))}
+      </div>
       <button
         className={styles.parent}
         onClick={() => {
@@ -26,23 +31,7 @@ export const ClientParent = ({ children }: ClientParentProps) => {
         }}
       >
         +
-      </button>
-      {arr.length > 5 ? (
-        <>
-          <div>
-            <ClientChild text={`over 5 parent`} />
-            <ClientChild text={`over 5 parent`} />
-          </div>
-        </>
-      ) : (
-        <>
-          <DivWrapper>
-            <ClientChild text={`eq to or less than 5`} />
-            <ClientChild text={`eq to or less than 5`} />
-            <ClientChild text={`eq to or less than 5`} />
-          </DivWrapper>
-        </>
-      )}
+      </button>{" "}
     </div>
   );
 };

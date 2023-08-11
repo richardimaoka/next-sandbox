@@ -1,26 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./style.module.css";
 
 interface ClientChildProps {
   text: string;
+  doScroll: boolean;
 }
 
-export const ClientChild = ({ text }: ClientChildProps) => {
+export const ClientChild = ({ text, doScroll }: ClientChildProps) => {
   const [count, setCount] = React.useState(0);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (ref.current && doScroll) {
+      ref.current.scrollIntoView();
+    }
+  }, [doScroll, ref]);
 
   return (
-    <div className={styles.child}>
+    <div ref={ref} className={styles.child}>
       <button
-        className={styles.child}
+        className={styles.button}
         onClick={() => {
           setCount(count + 1);
         }}
       >
         {count}+
       </button>
-      {text}
+      <div>{text}</div>
     </div>
   );
 };
