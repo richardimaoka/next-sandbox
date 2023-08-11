@@ -13,10 +13,11 @@ export const ClientChild = ({ text, doScroll }: ClientChildProps) => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log("useEffect called", text);
     if (ref.current && doScroll) {
       ref.current.scrollIntoView();
     }
-  }, [doScroll, ref]);
+  });
 
   return (
     <div ref={ref} className={styles.child}>

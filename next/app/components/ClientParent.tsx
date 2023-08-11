@@ -17,6 +17,16 @@ export const ClientParent = ({ children }: ClientParentProps) => {
   return (
     <div className={styles.parent}>
       <div>{JSON.stringify(arr)}</div>
+      <button
+        className={styles.parent}
+        onClick={() => {
+          const copied = [...arr];
+          copied.push(arr.length);
+          setArr(copied);
+        }}
+      >
+        +
+      </button>{" "}
       <div>
         {arr.map((n) => (
           <ClientChild key={n} text={`${n}`} doScroll={n === arr.length - 1} />
