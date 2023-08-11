@@ -3,7 +3,11 @@
 import React from "react";
 import styles from "./style.module.css";
 
-export const ClientChild = () => {
+interface ClientChildProps {
+  text: string;
+}
+
+export const ClientChild = ({ text }: ClientChildProps) => {
   const [count, setCount] = React.useState(0);
 
   return (
@@ -16,7 +20,7 @@ export const ClientChild = () => {
       >
         {count}+
       </button>
-      I am a child
+      {text}
     </div>
   );
 };
