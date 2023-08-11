@@ -4,6 +4,9 @@ import React from "react";
 import styles from "./style.module.css";
 import { ClientChild } from "./ClientChild";
 
+const DivWrapper = ({ children }: { children: React.ReactNode }) => {
+  return <div>{children}</div>;
+};
 interface ClientParentProps {
   children?: React.ReactNode;
 }
@@ -33,9 +36,11 @@ export const ClientParent = ({ children }: ClientParentProps) => {
         </>
       ) : (
         <>
-          <ClientChild text={`eq to or less than 5`} />
-          <ClientChild text={`eq to or less than 5`} />
-          <ClientChild text={`eq to or less than 5`} />
+          <DivWrapper>
+            <ClientChild text={`eq to or less than 5`} />
+            <ClientChild text={`eq to or less than 5`} />
+            <ClientChild text={`eq to or less than 5`} />
+          </DivWrapper>
         </>
       )}
     </div>
