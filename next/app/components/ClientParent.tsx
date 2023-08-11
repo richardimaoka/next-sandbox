@@ -5,32 +5,37 @@ import styles from "./style.module.css";
 import { ClientChild } from "./ClientChild";
 
 interface ClientParentProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const ClientParent = ({ children }: ClientParentProps) => {
-  const [count, setCount] = React.useState(0);
+  const [arr, setArr] = React.useState<number[]>([]);
 
   return (
     <div className={styles.parent}>
+      <div>{JSON.stringify(arr)}</div>
       <button
         className={styles.parent}
         onClick={() => {
-          setCount(count + 1);
+          const copied = [...arr];
+          copied.push(arr.length);
+          setArr(copied);
         }}
       >
-        {count}+
+        +
       </button>
-      {count > 5 ? (
+      {arr.length > 5 ? (
         <>
-          <ClientChild text={`over 5 parent state = ${count}`} />
-          <ClientChild text={`over 5 parent state = ${count}`} />
+          <div>
+            <ClientChild text={`over 5 parent`} />
+            <ClientChild text={`over 5 parent`} />
+          </div>
         </>
       ) : (
         <>
-          <ClientChild text={`eq to or less than 5, parent state = ${count}`} />
-          <ClientChild text={`eq to or less than 5, parent state = ${count}`} />
-          <ClientChild text={`eq to or less than 5, parent state = ${count}`} />
+          <ClientChild text={`eq to or less than 5`} />
+          <ClientChild text={`eq to or less than 5`} />
+          <ClientChild text={`eq to or less than 5`} />
         </>
       )}
     </div>
