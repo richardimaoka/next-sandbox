@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "./style.module.css";
 import { ClientChild } from "./ClientChild";
+import Link from "next/link";
 
 const DivWrapper = ({ children }: { children: React.ReactNode }) => {
   return <div>{children}</div>;
@@ -26,22 +27,17 @@ export const ClientParent = ({ children }: ClientParentProps) => {
         }}
       >
         +
-      </button>{" "}
+      </button>
       <div>
-        {arr.map((n) => (
+        {/* {arr.map((n) => (
           <ClientChild key={n} text={`${n}`} doScroll={n === arr.length - 1} />
-        ))}
+        ))} */}
+        <ClientChild text={`${1}`} doScroll={false} />
+        <ClientChild text={`${3}`} doScroll={false} />
       </div>
-      <button
-        className={styles.parent}
-        onClick={() => {
-          const copied = [...arr];
-          copied.push(arr.length);
-          setArr(copied);
-        }}
-      >
-        +
-      </button>{" "}
+      <Link href={`/?count=${arr.length}`}>
+        <button className={styles.button}>+</button>
+      </Link>
     </div>
   );
 };
