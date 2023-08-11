@@ -22,9 +22,16 @@ export const ClientParent = ({ children }: ClientParentProps) => {
         {count}+
       </button>
       {count > 5 ? (
-        <ClientChild text={"over 5"} />
+        <>
+          <ClientChild text={"over 5"} />
+          <ClientChild text={"over 5"} />
+        </>
       ) : (
-        <ClientChild text={"eq to or less than 5"} />
+        <>
+          <ClientChild text={"eq to or less than 5"} />
+          <ClientChild text={"eq to or less than 5"} />
+          <ClientChild text={"eq to or less than 5"} />
+        </>
       )}
     </div>
   );
