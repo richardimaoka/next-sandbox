@@ -1,10 +1,9 @@
-import { ClientChild } from "./components/ClientChild";
-import { ClientParent } from "./components/ClientParent";
+import { Video } from "./youtube/Video";
 
 export default function Home() {
   return (
     <main>
-      <ClientParent></ClientParent>
+      <Video />
     </main>
   );
 }
