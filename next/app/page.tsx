@@ -1,5 +1,7 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Image from "next/image";
+import styles from "./page.module.css";
+import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react";
 
 export default function Home() {
   return (
@@ -15,7 +17,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -88,8 +90,14 @@ export default function Home() {
           <p>
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
+          ;
         </a>
       </div>
+      <Editor
+        height="90vh"
+        defaultLanguage="javascript"
+        defaultValue="// some comment"
+      />
     </main>
-  )
+  );
 }
