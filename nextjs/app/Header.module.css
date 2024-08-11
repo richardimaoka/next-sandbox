@@ -16,7 +16,7 @@
   /* grid children's grid settings */
   > .search {
     display: grid;
-    justify-content: end;
+    justify-items: end;
   }
 
   /* other header settings */
@@ -42,14 +42,15 @@
   padding-bottom: 4px;
   padding-left: 8px;
   padding-right: 8px;
+
+  transition: width 0.3s;
+  width: 10rem;
 }
 
 .input:focus {
   border: 2px solid rgb(139, 139, 139);
 
-  /* to avoid layout shift, subtract border width from the non-focus style*/
-  padding-left: 6px;
-  padding-right: 6px;
+  width: 100%;
 }
 
 .login {
