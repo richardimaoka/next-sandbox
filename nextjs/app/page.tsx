@@ -1,7 +1,7 @@
 import { Header } from "./Header";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default function Page() {
   return (
     <div>
       <Header />
