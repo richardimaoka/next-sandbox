@@ -3,12 +3,7 @@
   display: grid;
   grid-template-columns:
     auto /*logo*/
-    auto /*link1*/
-    auto /*link2*/
-    auto /*link3*/
-    1fr /*search input*/
-    auto /*input*/
-    auto /*Log in*/;
+    1fr; /*search input*/
 
   column-gap: 20px;
   align-items: center;
@@ -27,43 +22,28 @@
   background-color: rgb(182, 182, 182);
 }
 
+.button {
+  text-align: start;
+
+  color: grey;
+  background-color: white;
+
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  width: 10rem;
+}
+
+.popover {
+  top: 5rem;
+  margin: 0 auto;
+}
+
 .logo {
   font-size: 1.5rem;
 
   padding-top: 4px;
   padding-bottom: 4px;
-}
-
-.input {
-  border-style: none;
-  outline-style: none;
-
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-
-  transition: width 0.3s;
-  width: 10rem;
-}
-
-.input:focus {
-  border: 2px solid rgb(139, 139, 139);
-
-  width: 100%;
-}
-
-.login {
-  color: white;
-  border: solid 1px white;
-
-  box-sizing: border-box;
-
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 8px;
-  padding-right: 8px;
-
-  margin-top: 8px;
-  margin-bottom: 8px;
 }
