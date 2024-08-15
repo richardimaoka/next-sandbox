@@ -1,32 +1,6 @@
 .component {
   display: grid;
-  justify-items: end;
-}
-
-.button {
-  text-align: start;
-
-  color: grey;
-  background-color: white;
-
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-
-  width: 10rem;
-}
-
-.popover {
-  top: 5rem;
-  margin: 0 auto;
-
-  border-style: none;
-  background-color: rgb(182, 182, 182);
-}
-
-.popover::backdrop {
-  background: rgb(190 190 190 / 50%);
+  justify-content: end;
 }
 
 .input {
@@ -38,12 +12,16 @@
   padding-left: 8px;
   padding-right: 8px;
 
-  width: 30rem;
+  /*search input expand animation*/
+  transition: width 0.3s;
+  width: 10rem;
+
+  justify-self: end;
 }
 
-.item {
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
+.input:focus {
+  border: 2px solid rgb(139, 139, 139);
+
+  /*search input expand animation*/
+  width: 100%;
 }
