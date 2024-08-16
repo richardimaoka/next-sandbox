@@ -33,6 +33,7 @@
   padding-right: 8px;
 
   /*search input expand animation*/
+  transition: width 0.3s;
   width: 15rem;
   justify-self: end;
 }
@@ -40,7 +41,6 @@
 .input:focus {
   border: 2px solid rgb(139, 139, 139);
 
-  /* to avoid layout shift, subtract border width from the non-focus style*/
-  padding-left: 6px;
-  padding-right: 6px;
+  /*search input expand animation*/
+  width: 100%;
 }
