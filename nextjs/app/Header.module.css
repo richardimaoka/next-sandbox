@@ -18,28 +18,12 @@
   background-color: rgb(182, 182, 182);
 }
 
+.searchExpand {
+  grid-template-columns:
+    auto /* logo */
+    1fr; /* search */
+}
+
 .component > div {
   color: black;
-}
-
-.input {
-  border-style: none;
-  outline-style: none;
-
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-
-  /*search input expand animation*/
-  transition: width 0.3s;
-  width: 15rem;
-  justify-self: end;
-}
-
-.input:focus {
-  border: 2px solid rgb(139, 139, 139);
-
-  /*search input expand animation*/
-  width: 100%;
 }
