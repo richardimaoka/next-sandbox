@@ -15,6 +15,14 @@ export function Search(props: Props) {
         onFocus={props.onFocus}
         onBlur={props.onBlur}
       />
+      {props.searchMode && (
+        <div className={styles.results}>
+          <div className={styles.item}>result 1</div>
+          <div className={styles.item}>result 2</div>
+          <div className={styles.item}>result 3</div>
+          <div className={styles.item}>result 4</div>
+        </div>
+      )}
     </div>
   );
 }

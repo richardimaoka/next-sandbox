@@ -1,6 +1,7 @@
 .component {
   display: grid;
   justify-items: end;
+  position: relative;
 }
 
 .input {
@@ -22,4 +23,10 @@
 
   /*search input expand animation*/
   width: 100%;
+}
+
+.results {
+  position: absolute;
+  top: 3rem;
+  left: 0px;
 }
