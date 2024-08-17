@@ -1,5 +1,6 @@
 import styles from "./Header.module.css";
 import { Logo } from "./Logo";
+import { Search } from "./Search";
 
 interface Props {}
 
@@ -11,7 +12,7 @@ export function Header(props: Props) {
       <div>item2</div>
       <div>item3</div>
       <div>item4</div>
-      <input className={styles.input} placeholder="search text" />
+      <Search />
     </div>
   );
 }
