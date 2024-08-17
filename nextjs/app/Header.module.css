@@ -1,46 +1,8 @@
 .component {
-  /* grid */
-  display: grid;
-  grid-template-columns:
-    auto /*logo*/
-    1fr; /*search input*/
-
-  column-gap: 20px;
-  align-items: center;
-
   /* other header settings */
   padding-left: 30px;
   padding-right: 30px;
 
   color: white;
   background-color: rgb(182, 182, 182);
-}
-
-.logo {
-  font-size: 1.5rem;
-
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.input {
-  border-style: none;
-  outline-style: none;
-
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-
-  /*search input expand animation*/
-  transition: width 0.3s;
-  width: 15rem;
-  justify-self: end;
-}
-
-.input:focus {
-  border: 2px solid rgb(139, 139, 139);
-
-  /*search input expand animation*/
-  width: 100%;
 }
