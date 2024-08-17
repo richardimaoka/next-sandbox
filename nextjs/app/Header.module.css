@@ -1,4 +1,9 @@
 .component {
+  display: grid;
+  grid-template-columns:
+    auto /* logo */
+    1fr;
+
   /* other header settings */
   padding-left: 30px;
   padding-right: 30px;
