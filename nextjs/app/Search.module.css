@@ -1,3 +1,8 @@
+.component {
+  display: grid;
+  justify-items: end;
+}
+
 .input {
   border-style: none;
   outline-style: none;
@@ -10,7 +15,6 @@
   /*search input expand animation*/
   transition: width 0.3s;
   width: 15rem;
-  justify-self: end;
 }
 
 .input:focus {
