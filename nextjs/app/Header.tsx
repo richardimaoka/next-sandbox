@@ -21,15 +21,7 @@ export function Header(props: Props) {
       {!searchMode && <div>item2</div>}
       {!searchMode && <div>item3</div>}
       {!searchMode && <div>item4</div>}
-      <Search
-        onFocus={() => {
-          setSearchMode(true);
-        }}
-        onBlur={() => {
-          setSearchMode(false);
-        }}
-        searchMode={searchMode}
-      />
+      <Search />
     </div>
   );
 }
