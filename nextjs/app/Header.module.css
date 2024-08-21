@@ -1,8 +1,10 @@
 .component {
+  /* grid */
   display: grid;
   grid-template-columns:
-    auto /* logo */
-    1fr; /* search */
+    auto /*logo*/
+    1fr; /*search input*/
+
   column-gap: 20px;
   align-items: center;
 
@@ -14,6 +16,9 @@
   background-color: rgb(182, 182, 182);
 }
 
-.component > div {
-  color: black;
+.logo {
+  font-size: 1.5rem;
+
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
