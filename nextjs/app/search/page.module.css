@@ -4,7 +4,8 @@
 
   display: grid;
   grid-template-rows: repeat(auto-fil, auto);
-  row-gap: 20px;
+  grid-template-columns: auto 1fr;
+  row-gap: 10px;
 
   margin-top: 20px;
   margin-bottom: 20px;
@@ -14,7 +15,11 @@
   border: solid 1px rgb(182, 182, 182);
   padding: 8px;
 
+  /* occupy the full width of the grid, to use subgrid */
+  grid-column: 1/-1;
+
   display: grid;
-  grid-template-columns: auto 1fr;
+  /* subgrid to layout each column in the same width*/
+  grid-template-columns: subgrid;
   column-gap: 10px;
 }

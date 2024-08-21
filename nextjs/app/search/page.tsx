@@ -1,7 +1,20 @@
 import { Header } from "../Header";
 import styles from "./page.module.css";
 
-export default function Page() {
+interface Props {
+  params: { slug: string }; // for dynamic routes only
+  searchParams: {
+    query?: string | string[];
+  };
+}
+
+function strOrUndef(param: string | string[] | undefined): string | undefined {
+  return typeof param === "string" && param !== "" ? param : undefined;
+}
+
+export default function Page(props: Props) {
+  const query = strOrUndef(props.searchParams.query);
+
   const results = [
     {
       id: "8db3cf81-768b-490e-911d-276a4c8bb73b",
