@@ -1,3 +1,8 @@
+.component {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
 .input {
   border-style: none;
   outline-style: none;
@@ -18,4 +23,14 @@
 
   /*search input expand animation*/
   width: 100%;
+}
+
+.button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  background-color: grey;
+  color: white;
 }
