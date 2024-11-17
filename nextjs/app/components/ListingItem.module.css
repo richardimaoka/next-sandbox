@@ -10,5 +10,9 @@
 
   font-size: 2rem;
 
+  color: rgb(78, 78, 78);
   background-color: antiquewhite;
+
+  transition: 0.5s transform;
+  
 }

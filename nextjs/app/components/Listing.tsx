@@ -4,8 +4,8 @@ import { ListingState } from "./ListingState";
 export function Listing() {
   const items = [
     { s: "A", rank: 1 },
-    { s: "B", rank: 2 },
-    { s: "C", rank: 3 },
+    { s: "B", rank: 2, nextRank: 3 },
+    { s: "C", rank: 3, nextRank: 2 },
   ];
 
   return (

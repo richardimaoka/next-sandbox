@@ -9,7 +9,7 @@ export function ListingLayout(props: Props) {
   return (
     <div className={styles.component}>
       {props.items.map((i) => (
-        <ListingItem key={i.s} s={i.s} rank={i.rank} />
+        <ListingItem key={i.s} s={i.s} rank={i.rank} nextRank={i.nextRank} />
       ))}
     </div>
   );

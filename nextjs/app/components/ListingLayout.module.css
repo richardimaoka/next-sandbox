@@ -1,4 +1,6 @@
 .component {
   display: grid;
   row-gap: 2px;
+
+  border: solid 4px lightgray;
 }
