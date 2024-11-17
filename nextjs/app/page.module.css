@@ -1,0 +1,8 @@
+.component {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  width: 100svw;
+  height: 100svh;
+}
