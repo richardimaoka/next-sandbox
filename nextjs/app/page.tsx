@@ -1,10 +1,10 @@
-import { State } from "./components/state/State";
+import { Character } from "./components/char/Character";
 import styles from "./page.module.css";
 
 export default function Page() {
   return (
     <div className={styles.component}>
-      <State />
+      <Character />
     </div>
   );
 }
