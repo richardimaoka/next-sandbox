@@ -4,7 +4,14 @@ import styles from "./page.module.css";
 export default function Page() {
   const list = [
     { name: "aaa aa aa a a aa" },
-    { name: "b b bb" },
+    {
+      name: "b b bb",
+      childItems: [
+        { name: "aaa aa aa a a aa" },
+        { name: "b b bb" },
+        { name: "cccc" },
+      ],
+    },
     { name: "cccc" },
   ];
   return (
