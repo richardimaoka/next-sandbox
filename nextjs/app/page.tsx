@@ -1,10 +1,10 @@
-import { Character } from "./components/char/Character";
+import { List } from "./components/list/List";
 import styles from "./page.module.css";
 
 export default function Page() {
   return (
     <div className={styles.component}>
-      <Character />
+      <List />
     </div>
   );
 }
