@@ -1,0 +1,77 @@
+.button {
+  /* Cancel button's default styling */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  font-size: unset;
+
+  /* grid layout */
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+
+  /* decoration */
+  background-color: rgb(25, 118, 210);
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 4px;
+
+  /* layout */
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 8px;
+}
+
+.image {
+  fill: white;
+}
+
+.menu {
+  /* cancel default popover settings */
+  border-style: none;
+
+  /* anchor position settings */
+  /* position: absolute; /* this is not necessary if you use popover in combo with anchor */
+  /* position-anchor: --anchor-*********; /* this should be supplied by the style attribute instead */
+  position-area: bottom span-right;
+  /* popover element has weird large margins  */
+  margin: 0;
+
+  background-color: antiquewhite;
+  transition: display 0.3s allow-discrete;
+  overflow-y: hidden;
+}
+
+.menu {
+  animation: 0.3s forwards shrink;
+}
+
+.menu:popover-open {
+  animation: 0.3s forwards expand;
+}
+
+@keyframes expand {
+  from {
+    height: 0;
+  }
+
+  to {
+    /* calc-size is necessary for height animation, otherwise, interpolate-size: allow-keywords*/
+    height: calc-size(max-content, size);
+  }
+}
+
+@keyframes shrink {
+  from {
+    /* calc-size is necessary for height animation, otherwise, interpolate-size: allow-keywords*/
+    height: calc-size(max-content, size);
+  }
+
+  to {
+    height: 0;
+  }
+}

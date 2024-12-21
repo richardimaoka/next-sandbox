@@ -1,4 +1,6 @@
 import { List } from "./components/list/List";
+import { HoverMenu } from "./components/toggle/HoverMenu";
+import { ToggleMenu } from "./components/toggle/ToggleMenu";
 import styles from "./page.module.css";
 
 export default function Page() {
@@ -16,7 +18,12 @@ export default function Page() {
   ];
   return (
     <div className={styles.component}>
-      <List list={list} />
+      <ToggleMenu>
+        <List list={list} />
+      </ToggleMenu>
+      <HoverMenu>
+        <List list={list} />
+      </HoverMenu>
     </div>
   );
 }
