@@ -5,3 +5,8 @@
   border: solid 1px black;
   padding: 16px;
 }
+
+.item {
+  border: solid 1px black;
+  padding: 8px;
+}
