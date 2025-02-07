@@ -1,0 +1,28 @@
+.component {
+  display: flex;
+  column-gap: 2px;
+  align-items: center;
+}
+
+.element {
+  /* Cancel the default <a> decoration */
+  text-decoration: none;
+  color: inherit;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  border-radius: 4px;
+
+  color: inherit;
+}
+
+.element:hover {
+  background-color: rgb(216, 216, 216);
+}
+
+.separator {
+  color: inherit;
+}

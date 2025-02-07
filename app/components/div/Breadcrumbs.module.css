@@ -1,0 +1,12 @@
+.component {
+  display: flex;
+  column-gap: 8px;
+}
+
+.element {
+  color: inherit;
+}
+
+.separator {
+  color: inherit;
+}
