@@ -1,7 +1,7 @@
 type Props = {};
 
 export function Child(props: Props) {
-  console.log("Parent rendering");
+  console.log("Child rendering");
 
   return <div>child</div>;
 }
