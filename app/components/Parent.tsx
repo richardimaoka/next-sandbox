@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { Child } from "./Child";
 
-type Props = {};
+type Props = {
+  children: ReactNode;
+};
 
 export function Parent(props: Props) {
   console.log("Parent rendering");
@@ -14,7 +16,7 @@ export function Parent(props: Props) {
 
   return (
     <div>
-      <Child />
+      {props.children}
       <button type="button" onClick={onClick}>
         +
       </button>
