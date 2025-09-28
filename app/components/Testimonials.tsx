@@ -8,8 +8,8 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="p-8 bg-white rounded-lg shadow-lg">
             <p className="text-gray-700 italic mb-4">
-              "This AI product has transformed our workflow. The efficiency
-              gains are incredible!"
+              &quot;This AI product has transformed our workflow. The efficiency
+              gains are incredible!&quot;
             </p>
             <p className="font-semibold text-indigo-600">
               - Jane Doe, CEO of TechCorp
@@ -17,8 +17,8 @@ export default function Testimonials() {
           </div>
           <div className="p-8 bg-white rounded-lg shadow-lg">
             <p className="text-gray-700 italic mb-4">
-              "An indispensable tool for any modern business. Highly recommend
-              their innovative solutions."
+              &quot;An indispensable tool for any modern business. Highly recommend
+              their innovative solutions.&quot;
             </p>
             <p className="font-semibold text-indigo-600">
               - John Smith, Founder of InnovateX
