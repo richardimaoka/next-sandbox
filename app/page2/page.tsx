@@ -52,8 +52,8 @@ export default function Home() {
             />
             Deploy Now
           </a>
-          <Link className={styles.secondary} href="/page2">
-            Page 2
+          <Link className={styles.secondary} href="/">
+            Home
           </Link>
         </div>
       </main>
