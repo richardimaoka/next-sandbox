@@ -12,13 +12,15 @@ export default function Home() {
         <div>
           <Link href="/">go home</Link>
         </div>
-        <div
-          style={{
-            backgroundColor: "lightblue",
-            width: "100px",
-            height: "50px",
-          }}
-        ></div>
+        <ViewTransition name="rect">
+          <div
+            style={{
+              backgroundColor: "lightblue",
+              width: "100px",
+              height: "50px",
+            }}
+          ></div>
+        </ViewTransition>
       </div>
     </ViewTransition>
   );

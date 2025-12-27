@@ -3,15 +3,15 @@ import { ViewTransition } from "react";
 
 export default function Home() {
   return (
-    <ViewTransition>
+    <div>
+      This is the home page
       <div>
-        This is the home page
-        <div>
-          <Link href="/parent">go to parent</Link>
-        </div>
-        <div>
-          <Link href="/parent/child">go to child</Link>
-        </div>
+        <Link href="/parent">go to parent</Link>
+      </div>
+      <div>
+        <Link href="/parent/child">go to child</Link>
+      </div>
+      <ViewTransition name="rect">
         <div
           style={{
             backgroundColor: "lightblue",
@@ -19,7 +19,7 @@ export default function Home() {
             height: "200px",
           }}
         ></div>
-      </div>
-    </ViewTransition>
+      </ViewTransition>
+    </div>
   );
 }
