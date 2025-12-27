@@ -6,10 +6,10 @@ export default function Home() {
     <div>
       This is the parent page.
       <div>
-        <Link href="/">go home</Link>
+        <Link href="/parent/child">go to child</Link>
       </div>
       <div>
-        <Link href="/parent/child">go to child</Link>
+        <Link href="/">go home</Link>
       </div>
       <ViewTransition>
         <div
