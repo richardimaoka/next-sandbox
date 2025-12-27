@@ -4,7 +4,13 @@ import { ViewTransition } from "react";
 export default function Home() {
   return (
     <div>
-      This is the parent page. <Link href="/">go to home</Link>
+      This is the parent page.
+      <div>
+        <Link href="/">go home</Link>
+      </div>
+      <div>
+        <Link href="/parent/child">go to child</Link>
+      </div>
       <ViewTransition>
         <div
           style={{
